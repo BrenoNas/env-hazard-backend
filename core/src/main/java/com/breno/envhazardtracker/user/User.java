@@ -20,6 +20,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class User extends SelfValidating<User> implements Serializable {
 
+    private String Id;
+
     @NotBlank()
     @Size(max = 50)
     private String username;
@@ -27,8 +29,6 @@ public class User extends SelfValidating<User> implements Serializable {
     @NotBlank()
     @Email()
     private String email;
-
-    private String userId;
 
     private String passwordHash;
 
