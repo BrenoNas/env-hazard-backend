@@ -9,7 +9,7 @@ public class UserRepositoryConverter implements RepositoryConverter<UserEntity, 
     @Override
     public UserEntity mapToTable(final User persistenceObject) {
         return new UserEntity(persistenceObject.getId(), persistenceObject.getUsername(),
-                persistenceObject.getEmail(), persistenceObject.getPasswordHash(), persistenceObject.getCreatedAt());
+                persistenceObject.getEmail(), persistenceObject.getPassword(), persistenceObject.getCreatedAt());
     }
 
     @Override

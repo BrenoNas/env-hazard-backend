@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserRepositoryService {
 
     @Override
     public Boolean doesUserAlreadyExist(String userName) {
-        return !userRepository.findByLogin(userName).isEmpty();
+        return userRepository.findByUsername(userName).isPresent();
     }
 
     @Override
