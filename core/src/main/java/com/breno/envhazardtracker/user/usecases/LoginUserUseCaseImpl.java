@@ -17,7 +17,7 @@ public class LoginUserUseCaseImpl implements LoginUserUseCase {
         var user = userRepositoryService.findByEmail(email).orElseThrow(NotAllowedException::new);
 
         var hashedPassword = passwordEncoderService.encodePassword(password);
-        if (!user.getPasswordHash().equals(hashedPassword)) throw new NotAllowedException();
+        if (!user.getPassword().equals(hashedPassword)) throw new NotAllowedException();
         return user;
     }
 }
