@@ -24,7 +24,7 @@ public class Hazard extends SelfValidating<Hazard> implements Serializable {
     private UUID userId;
 
     @NotNull
-    private UUID hazardTypeId;
+    private Integer hazardTypeId;
 
     @Size(max = 500)
     private String description;
@@ -37,7 +37,7 @@ public class Hazard extends SelfValidating<Hazard> implements Serializable {
 
     private LocalDateTime createdAt;
 
-    public Hazard(UUID userId, UUID hazardTypeId, String description, Double latitude, Double longitude) {
+    public Hazard(UUID userId, Integer hazardTypeId, String description, Double latitude, Double longitude) {
         this.userId = userId;
         this.hazardTypeId = hazardTypeId;
         this.description = description;
