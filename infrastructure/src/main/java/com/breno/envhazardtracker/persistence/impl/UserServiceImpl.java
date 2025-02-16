@@ -7,6 +7,7 @@ import com.breno.envhazardtracker.user.ports.UserRepositoryService;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @AllArgsConstructor
 public class UserServiceImpl implements UserRepositoryService {
@@ -28,4 +29,5 @@ public class UserServiceImpl implements UserRepositoryService {
     public Optional<User> findByEmail(String email) {
         return Optional.empty();
     }
+
 }

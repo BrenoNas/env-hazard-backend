@@ -7,5 +7,5 @@ import com.breno.envhazardtracker.shared.exceptions.EnvHazardException;
 public interface UserController {
 
     EnvHazardResponse<Boolean> createUser(UserRest user) throws EnvHazardException;
-
+    EnvHazardResponse<String> login(UserRest user) throws EnvHazardException;
 }
