@@ -13,9 +13,6 @@ public class ReportHazardUseCaseImpl implements ReportHazardUseCase {
 
     @Override
     public void execute(Hazard hazard) throws HazardAlreadyExistException {
-        if(hazardRepository.existsById(hazard.getId())) {
-            throw new HazardAlreadyExistException();
-        }
         hazardRepository.saveHazard(hazard);
     }
 }

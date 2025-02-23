@@ -4,6 +4,7 @@ import com.breno.envhazardtracker.hazard.Hazard;
 import com.breno.envhazardtracker.persistence.entities.HazardEntity;
 import com.breno.envhazardtracker.persistence.entities.HazardTypeEntity;
 import com.breno.envhazardtracker.persistence.entities.UserEntity;
+import com.breno.envhazardtracker.persistence.repositories.HazardTypeRepository;
 import com.breno.envhazardtracker.persistence.repositories.UserRepository;
 import com.breno.envhazardtracker.shared.RepositoryConverter;
 import lombok.AllArgsConstructor;
@@ -13,13 +14,16 @@ public class HazardRepositoryConverter implements RepositoryConverter<HazardEnti
 
     private UserRepository userRepository;
 
+    private HazardTypeRepository hazardTypeRepository;
+
     @Override
     public HazardEntity mapToTable(final Hazard persistenceObject) {
 
         UserEntity user = userRepository.findById(persistenceObject.getUserId()) .orElseThrow(() ->
                 new IllegalArgumentException("User not found"));
 
-        HazardTypeEntity hazardType = new HazardTypeEntity(persistenceObject.getHazardTypeId(), null);
+        HazardTypeEntity hazardType = hazardTypeRepository.findById(persistenceObject.getHazardTypeId()).orElseThrow(() ->
+                new IllegalArgumentException("Hazard type not found"));
 
         return new HazardEntity(persistenceObject.getId(), user,  hazardType,
                 persistenceObject.getDescription(), persistenceObject.getLatitude(),
