@@ -18,8 +18,8 @@ public class HazardServiceImpl implements HazardRepositoryService {
     private final HazardRepository hazardRepository;
 
     @Override
-    public void saveHazard(Hazard hazard) {
-        hazardRepository.save(hazardRepositoryConverter.mapToTable(hazard));
+    public UUID saveHazard(Hazard hazard) {
+        return hazardRepository.save(hazardRepositoryConverter.mapToTable(hazard)).getId();
     }
 
     @Override

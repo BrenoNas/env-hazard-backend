@@ -11,16 +11,10 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class HazardRest implements Serializable {
+public class MediaRest implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -6600537541142882346L;
+    private static final long serialVersionUID = 7624797630170106445L;
 
-    private Integer hazardTypeId;
-
-    private String description;
-
-    private Double latitude;
-
-    private Double longitude;
+    private MultipartFile image;
 }
