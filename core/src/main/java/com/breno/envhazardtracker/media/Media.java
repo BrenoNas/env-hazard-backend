@@ -17,16 +17,16 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Media extends SelfValidating<Media> implements Serializable {
 
-    protected UUID id;
+    private UUID id;
 
     @NotNull
-    protected byte[] content;
+    private byte[] content;
 
     @NotNull
-    protected String fileName;
+    private String fileName;
 
     @NotNull
-    protected String url;
+    private String url;
 
     public Media(byte[] content, String fileName) {
         this.content = content;

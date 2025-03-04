@@ -14,7 +14,7 @@ public class ReportHazardUseCaseImpl implements ReportHazardUseCase {
     private final HazardRepositoryService hazardRepository;
 
     @Override
-    public UUID execute(Hazard hazard) throws HazardAlreadyExistException {
-        return hazardRepository.saveHazard(hazard);
+    public void execute(Hazard hazard) throws HazardAlreadyExistException {
+        hazard.setId(hazardRepository.saveHazard(hazard));
     }
 }

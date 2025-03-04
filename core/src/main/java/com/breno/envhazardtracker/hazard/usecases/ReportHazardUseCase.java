@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface ReportHazardUseCase {
 
-    public UUID execute(Hazard hazard) throws HazardAlreadyExistException;
+    public void execute(Hazard hazard) throws HazardAlreadyExistException;
 
 }
